@@ -6,7 +6,7 @@ var xmen = [
 	["B","E","A","S","T"],
 	["I","C","E","M","A","N"],
 	["A","N","G","E","L"],
-	["M","A","R","V","E","L","G","I","R","L"]
+	["M","A","R","V","E","L"," ","G","I","R","L"]
 ];
 
 //letters
@@ -26,11 +26,23 @@ wordSelect();
 
 //get random word from work bank
 function wordSelect (array) { 
-	var rand = xmen[Math.floor(Math.random() * (xmen.length - 1))];
+	var rand = xmen[Math.floor(Math.random() * xmen.length)];
 	console.log ("random word: " + rand);
-}
+	convertWord();
 
-//set word to underscores
-//function convertWord ()
+	//set word to underscores
+	function convertWord () {
+		var guessWord = rand;
+		console.log("guessWord: " + guessWord);
+		$.each(guessWord, function(index) {
+			var $guessWord = $("<col-sm-2/>")
+			.addClass("blank")
+			.text("_ ")
+			$("#targetWord").append($guessWord);
+
+			
+		})
+	}
+}
 
 });
