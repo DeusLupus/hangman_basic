@@ -31,6 +31,6 @@ function wordSelect (array) {
 }
 
 //set word to underscores
-function convertWord ()
+//function convertWord ()
 
 });
