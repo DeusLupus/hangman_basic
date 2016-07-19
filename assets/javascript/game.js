@@ -1,4 +1,6 @@
-//set up word bank and attempts allowed
+$(document).ready(function() {
+
+//set up word bank
 var xmen = [
 	["C","Y","C","L","O","P","S"],
 	["B","E","A","S","T"],
@@ -7,24 +9,28 @@ var xmen = [
 	["M","A","R","V","E","L","G","I","R","L"]
 ];
 
+//letters
+var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+        $.each(letters, function(index, letter) {
+        	var $button = $("<button/>")
+        		.addClass("letter-button letter letter-button-color")
+        		.data("letter", letter)
+        		.text(letter)
+        		$("#buttons").append($button);
+        })
+
+wordSelect();
+
 //get random word from work bank
-var rand = xmen[Math.floor(Math.random() * xmen.length)];
-console.log ("random index " + rand);
-
-//assign random word to array
-var guess = [rand];
-console.log("guess[]= " + guess);
-
-//assign underscore for word to be guessed
-for (i = 0; i < guess.length; i++) {
-	guess[i] = "_ ";
+function wordSelect (array) { 
+	var rand = xmen[Math.floor(Math.random() * (xmen.length - 1))];
+	console.log ("random word: " + rand);
 }
-console.log(guess);
 
-function displayGuess() {
-	for (var i = 0; i < guess.length; i++){
-		var targetWord = document.getElementById("targetWord");
-		var letter = document.createTextNode(guess[i]);
-		targetWord.appendChild(letter);
-	}
-}
+//set word to underscores
+function convertWord ()
+
+});
