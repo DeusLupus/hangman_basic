@@ -38,11 +38,19 @@ function wordSelect (array) {
 			var $guessWord = $("<col-sm-2/>")
 			.addClass("blank")
 			.text("_ ")
-			$("#targetWord").append($guessWord);
-
-			
+			$("#targetWord").append($guessWord);			
 		})
 	}
+}
+//take user input
+function userGuess () {
+	var keyPress = event.keyCode;
+	
+}
+
+//compare user guess to word
+function compareLetter () {
+	if ()
 }
 
 });
